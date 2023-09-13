@@ -27,6 +27,14 @@
             margin-right: 5px;
           }
         }
+        @media only screen and (max-width: 601px) {
+          .label {
+            display: none;
+          }
+          .node .node-url svg {
+            margin-right: 0;
+          }
+        }
       }
 
       .bottom-menu-item-wrapper {
@@ -44,6 +52,19 @@
           }
           &:hover {
             cursor: pointer;
+          }
+          @media only screen and (max-width: 600px) {
+            button {
+              min-width: 0;
+            }
+            .label {
+              display: none;
+            }
+          }
+          @media only screen and (min-width: 601px) {
+            .small-label {
+              display: none;
+            }
           }
         }
       }
@@ -70,6 +91,18 @@
     .menu-list {
       margin: 50px auto 0;
       width: 80%;
+      @media only screen and (max-width: 601px) {
+        .label {
+          display: none;
+        }
+        button.MuiTab-root {
+          min-width: 0;
+          border-radius: 0;
+          .MuiTab-iconWrapper {
+            margin-right: 0;
+          }
+        }
+      }
     }
   }
 }

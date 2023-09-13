@@ -62,10 +62,8 @@ function LeftBar(): JSX.Element {
                   navigate('/');
               }}>
                   <div className="text">
-                      <img src={Logo} alt="logo"/>
-                      Dappflow
+                      V.O
                   </div>
-
               </div>
 
               <div className="menu-list">
@@ -82,25 +80,25 @@ function LeftBar(): JSX.Element {
                           display: "none"
                       }
                   }}>
-                      <Tab icon={<StorageIcon></StorageIcon>} iconPosition="start" label="Explorer" value="explorer" onClick={() => {
+                      <Tab icon={<StorageIcon></StorageIcon>} iconPosition="start" label={<span className="label">Explorer</span>} value="explorer" onClick={() => {
                           navigate('/explorer');
                       }}/>
-                      <Tab icon={<DeveloperBoardIcon></DeveloperBoardIcon>} iconPosition="start" label="ABI Studio" value="abi-studio" onClick={() => {
+                      <Tab icon={<DeveloperBoardIcon></DeveloperBoardIcon>} iconPosition="start" label={<span className="label">ABI Studio</span>} value="abi-studio" onClick={() => {
                           navigate('/abi-studio');
                       }}/>
-                      <Tab icon={<CodeIcon></CodeIcon>} iconPosition="start" label="Developer API" value="developer-api" onClick={() => {
+                      <Tab icon={<CodeIcon></CodeIcon>} iconPosition="start" label={<span className="label">Developer API</span>}value="developer-api" onClick={() => {
                           navigate('/developer-api');
                       }}/>
-                      <Tab icon={<GavelIcon></GavelIcon>} iconPosition="start" label="ARC Portal" value="arc-portal" onClick={() => {
+                      <Tab icon={<GavelIcon></GavelIcon>} iconPosition="start" label={<span className="label">ARC Portal</span>} value="arc-portal" onClick={() => {
                           navigate('/arc-portal');
                       }}/>
-                      <Tab icon={<ShowerIcon></ShowerIcon>} iconPosition="start" label="Dispenser" value="dispenser" onClick={() => {
+                      <Tab icon={<ShowerIcon></ShowerIcon>} iconPosition="start" label={<span className="label">Dispenser</span>} value="dispenser" onClick={() => {
                           navigate('/dispenser');
                       }}/>
-                      <Tab icon={<InsertChartIcon></InsertChartIcon>} iconPosition="start" label="Node Status" value="node-status" onClick={() => {
+                      <Tab icon={<InsertChartIcon></InsertChartIcon>} iconPosition="start" label={<span className="label">Node Status</span>} value="node-status" onClick={() => {
                           navigate('/node-status');
                       }}/>
-                      <Tab icon={<CreditCardIcon></CreditCardIcon>} iconPosition="start" label="Dev Wallets" value="dev-wallets" onClick={() => {
+                      <Tab icon={<CreditCardIcon></CreditCardIcon>} iconPosition="start" label={<span className="label">Dev Wallets</span>} value="dev-wallets" onClick={() => {
                           navigate('/dev-wallets');
                       }}/>
 
@@ -129,7 +127,7 @@ function LeftBar(): JSX.Element {
 
                                   <div>
                                       <SettingsIcon fontSize={"small"} sx={{verticalAlign: 'middle'}} color={success ? 'primary' : 'warning'}></SettingsIcon>
-                                      {success ? <span>
+                                      {success ? <span className="label">
                                   {new CoreNode(node.status, node.versionsCheck, node.genesis, node.health).getGenesisId()}
                               </span> : <span>
                                   Unable to connect</span>}
@@ -214,7 +212,7 @@ function LeftBar(): JSX.Element {
                                            onClick={() => {
                                                dispatch(showConnectWallet());
                                            }}
-                          >Connect wallet</Button>}
+                          ><span className="label">Connect wallet</span><span className="small-label">🔌</span></Button>}
 
                           <ConnectWallet></ConnectWallet>
                       </div>
