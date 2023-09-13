@@ -29,4 +29,4 @@ export enum NETWORKS {
     SANDBOX = 'sandbox'
 }
 
-export const BLOCK_TIME = 3.6;
+export const BLOCK_TIME = 3.3;
