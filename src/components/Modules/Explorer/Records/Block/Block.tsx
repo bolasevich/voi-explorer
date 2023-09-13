@@ -125,6 +125,17 @@ function Block(): JSX.Element {
                                     </div>
                                 </div>
                             </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                                <div className="property">
+                                    <div className="key">
+                                        Proposer
+                                    </div>
+                                    <div className="value">
+                                        {block.proposer}
+                                    </div>
+                                </div>
+                            </Grid>
                         </Grid>
                     </div>
 
