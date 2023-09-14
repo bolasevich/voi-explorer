@@ -26,6 +26,7 @@ function Asset(): JSX.Element {
 
     useEffect(() => {
         dispatch(loadAsset(Number(id)));
+        document.title = `V.O: Asset ${id}`
     }, [dispatch, id]);
 
     return (<div className={"asset-wrapper"}>

@@ -40,6 +40,7 @@ function Account(): JSX.Element {
 
     useEffect(() => {
         dispatch(loadAccount(address));
+        document.title = `V.O: Account ${address}`
     }, [dispatch, address]);
 
     return (<div className={"account-wrapper"}>
