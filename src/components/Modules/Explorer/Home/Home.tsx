@@ -10,7 +10,7 @@ function Home(): JSX.Element {
         <div className={"home-container"}>
             <div className="home-body">
                 <div className="tag-line">
-                    Algorand Blockchain Explorer
+                    Voi Blockchain Explorer
                 </div>
                 <div className="search-section">
                     <Grid container spacing={2}>
