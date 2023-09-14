@@ -23,13 +23,13 @@
           text-align: center;
           font-size: 13px;
           color: $color-dark;
-          @media only screen and (min-width: 601px) {
+          @media only screen and (min-width: 901px) {
             svg {
               margin-right: 5px;
             }
           }
         }
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 900px) {
           .label {
             display: none;
           }
@@ -55,7 +55,7 @@
           &:hover {
             cursor: pointer;
           }
-          @media only screen and (max-width: 600px) {
+          @media only screen and (max-width: 900px) {
             button {
               min-width: 0;
             }
@@ -63,7 +63,7 @@
               display: none;
             }
           }
-          @media only screen and (min-width: 601px) {
+          @media only screen and (min-width: 901px) {
             .small-label {
               display: none;
             }
@@ -93,7 +93,7 @@
     .menu-list {
       margin: 50px auto 0;
       width: 80%;
-      @media only screen and (max-width: 601px) {
+      @media only screen and (max-width: 901px) {
         margin: 25px auto 0;
         .label {
           display: none;
