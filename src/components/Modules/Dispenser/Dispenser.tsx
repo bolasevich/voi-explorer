@@ -1,5 +1,5 @@
 import './Dispenser.scss';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../redux/store";
 import LoadingTile from "../../Common/LoadingTile/LoadingTile";
@@ -18,6 +18,7 @@ import {KMDConnectionParams} from "../../../packages/core-sdk/types";
 import LaunchIcon from '@mui/icons-material/Launch';
 import {theme} from "../../../theme";
 import AlgoIcon from "../Explorer/AlgoIcon/AlgoIcon";
+import { useLocation } from 'react-router-dom';
 
 const ShadedInput = styled(InputBase)<InputBaseProps>(({ theme }) => {
     return {
@@ -54,13 +55,17 @@ const initialState: DispenserState = {
 };
 
 function Dispenser(): JSX.Element {
-
+    const location = useLocation();
     const node = useSelector((state: RootState) => state.node);
     const {loading, versionsCheck, status, genesis, health} = node;
     const coreNodeInstance = new CoreNode(status, versionsCheck, genesis, health);
     const isSandbox = coreNodeInstance.isSandbox();
     const dispenerLinks = coreNodeInstance.getDispenserLinks();
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        document.title = 'V.O: Dispenser';
+    }, [location]);
 
     const [
         {address, success, error, txId, errMsg, amount, showKmdConfig},
