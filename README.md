@@ -1,8 +1,11 @@
-# Getting Started with Dappflow
+# Forked from Dappflow
+
+[Source](https://github.com/intelli-scripts/dappflow)
+
+# Getting Started
 
 1. Install node-js
 2. Install npm & yarn
-
 
 In the project directory run:
 
