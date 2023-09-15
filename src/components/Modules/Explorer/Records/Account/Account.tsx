@@ -6,7 +6,7 @@ import {loadAccount} from "../../../../../redux/explorer/actions/account";
 import {RootState} from "../../../../../redux/store";
 import {Chip, Grid, Tab, Tabs} from "@mui/material";
 import NumberFormat from "react-number-format";
-import {microalgosToAlgos} from "algosdk";
+import {microalgosToAlgos} from "../../../../../utils/common";
 import AlgoIcon from "../../AlgoIcon/AlgoIcon";
 import {CoreAccount} from "../../../../../packages/core-sdk/classes/core/CoreAccount";
 import LoadingTile from "../../../../Common/LoadingTile/LoadingTile";

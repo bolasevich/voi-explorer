@@ -6,7 +6,6 @@ import {
     Pagination,
     Tooltip
 } from "@mui/material";
-import {microalgosToAlgos} from "algosdk";
 import NumberFormat from 'react-number-format';
 import {
     DataGrid,
@@ -18,7 +17,7 @@ import {
 } from "@mui/x-data-grid";
 import {dataGridCellConfig, dataGridStyles} from "../../../../../theme/styles/datagrid";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import {copyContent} from "../../../../../utils/common";
+import {microalgosToAlgos, copyContent} from "../../../../../utils/common";
 import AlgoIcon from "../../AlgoIcon/AlgoIcon";
 import {CoreTransaction} from "../../../../../packages/core-sdk/classes/core/CoreTransaction";
 import {TXN_TYPES} from "../../../../../packages/core-sdk/constants";

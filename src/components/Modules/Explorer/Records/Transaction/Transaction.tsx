@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import {loadTransaction} from "../../../../../redux/explorer/actions/transaction";
 import {CoreTransaction} from "../../../../../packages/core-sdk/classes/core/CoreTransaction";
-import {microalgosToAlgos} from "algosdk";
 import AlgoIcon from "../../AlgoIcon/AlgoIcon";
 import {TXN_TYPES} from "../../../../../packages/core-sdk/constants";
 import PaymentTransaction from './Types/PaymentTransaction/PaymentTransaction';
@@ -20,7 +19,7 @@ import LinkToBlock from "../../Common/Links/LinkToBlock";
 import LoadingTile from "../../../../Common/LoadingTile/LoadingTile";
 import TransactionAdditionalDetails from "./Sections/TransactionAdditionalDetails/TransactionAdditionalDetails";
 import TransactionNote from "./Sections/TransactionNotes/TransactionNote";
-import {shadedClr} from "../../../../../utils/common";
+import {microalgosToAlgos,shadedClr} from "../../../../../utils/common";
 import TransactionMultiSig from "./Sections/TransactionMultiSig/TransactionMultiSig";
 import TransactionLogicSig from "./Sections/TransactionLogicSig/TransactionLogicSig";
 import JsonViewer from "../../../../Common/JsonViewer/JsonViewer";
