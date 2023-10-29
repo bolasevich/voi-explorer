@@ -29,7 +29,7 @@ import SwapCallsIcon from '@mui/icons-material/SwapCalls';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
-
+import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
 
 function LeftBar(): JSX.Element {
     const dispatch = useDispatch();
@@ -90,6 +90,9 @@ function LeftBar(): JSX.Element {
                       }}/>
                       <Tab icon={<RecordVoiceOverIcon />} iconPosition="start" label={<span className="label">Consensus</span>} value="consensus" onClick={() => {
                           window.open(`https://consensus.voi.observer/`);
+                      }}/>
+                      <Tab icon={<MonitorHeartIcon />} iconPosition="start" label={<span className="label">Node Metrics</span>} value="node metrics" onClick={() => {
+                          window.open(`https://voi-node-info.boeieruurd.com/`);
                       }}/>
                       <Tab icon={<DeveloperBoardIcon></DeveloperBoardIcon>} iconPosition="start" label={<span className="label">ABI Studio</span>} value="abi-studio" onClick={() => {
                           navigate('/abi-studio');
