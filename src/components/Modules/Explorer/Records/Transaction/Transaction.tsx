@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import {loadTransaction} from "../../../../../redux/explorer/actions/transaction";
 import {CoreTransaction} from "../../../../../packages/core-sdk/classes/core/CoreTransaction";
-import AlgoIcon from "../../AlgoIcon/AlgoIcon";
+import VoiIcon from "../../VoiIcon/VoiIcon";
 import {TXN_TYPES} from "../../../../../packages/core-sdk/constants";
 import PaymentTransaction from './Types/PaymentTransaction/PaymentTransaction';
 import AssetTransferTransaction from "./Types/AssetTransferTransaction/AssetTransferTransaction";
@@ -105,7 +105,7 @@ function Transaction(): JSX.Element {
                                     </div>
                                     <div className="value">
                                         {microalgosToAlgos(txnInstance.getFee())}
-                                        <span style={{marginLeft: 5}}><AlgoIcon></AlgoIcon></span>
+                                        <span style={{marginLeft: 5}}><VoiIcon></VoiIcon></span>
 
                                     </div>
                                 </div>

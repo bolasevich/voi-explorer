@@ -19,7 +19,7 @@ import {
 import {dataGridCellConfig, dataGridStyles} from "../../../../../theme/styles/datagrid";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import {microalgosToAlgos, copyContent} from "../../../../../utils/common";
-import AlgoIcon from "../../AlgoIcon/AlgoIcon";
+import VoiIcon from "../../VoiIcon/VoiIcon";
 import LinkToAccount from "../../Common/Links/LinkToAccount";
 import CustomNoRowsOverlay from "../../Common/CustomNoRowsOverlay/CustomNoRowsOverlay";
 
@@ -79,7 +79,7 @@ function Accounts(): JSX.Element {
             headerName: 'Balance',
             renderCell: (params: GridValueGetterParams) => {
                 return <div>
-                    <AlgoIcon></AlgoIcon>
+                    <VoiIcon></VoiIcon>
                     <NumberFormat
                         value={microalgosToAlgos(params.row.amount)}
                         displayType={'text'}

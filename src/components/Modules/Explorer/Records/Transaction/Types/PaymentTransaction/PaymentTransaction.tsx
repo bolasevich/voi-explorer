@@ -2,7 +2,7 @@ import './PaymentTransaction.scss';
 import React from "react";
 import {Grid} from "@mui/material";
 import {CoreTransaction} from "../../../../../../../packages/core-sdk/classes/core/CoreTransaction";
-import AlgoIcon from "../../../../AlgoIcon/AlgoIcon";
+import VoiIcon from "../../../../VoiIcon/VoiIcon";
 import NumberFormat from "react-number-format";
 import LinkToAccount from "../../../../Common/Links/LinkToAccount";
 import {microalgosToAlgos,shadedClr} from "../../../../../../../utils/common";
@@ -59,7 +59,7 @@ function PaymentTransaction(props): JSX.Element {
                                         thousandSeparator={true}
                                         style={{marginRight: 5}}
                                     ></NumberFormat>
-                                    <AlgoIcon></AlgoIcon>
+                                    <VoiIcon></VoiIcon>
                                 </div>
                             </div>
                         </Grid>
@@ -91,7 +91,7 @@ function PaymentTransaction(props): JSX.Element {
                                         thousandSeparator={true}
                                         style={{marginRight: 5}}
                                     ></NumberFormat>
-                                    <AlgoIcon></AlgoIcon>
+                                    <VoiIcon></VoiIcon>
                                 </div>
                             </div>
                         </Grid> : ''}

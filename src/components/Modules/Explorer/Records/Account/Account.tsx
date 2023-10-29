@@ -7,7 +7,7 @@ import {RootState} from "../../../../../redux/store";
 import {Chip, Grid, Tab, Tabs} from "@mui/material";
 import NumberFormat from "react-number-format";
 import {microalgosToAlgos} from "../../../../../utils/common";
-import AlgoIcon from "../../AlgoIcon/AlgoIcon";
+import VoiIcon from "../../VoiIcon/VoiIcon";
 import {CoreAccount} from "../../../../../packages/core-sdk/classes/core/CoreAccount";
 import LoadingTile from "../../../../Common/LoadingTile/LoadingTile";
 import JsonViewer from "../../../../Common/JsonViewer/JsonViewer";
@@ -67,7 +67,7 @@ function Account(): JSX.Element {
 
                     <div className="props">
                         <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
+                            <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
                                 <div className="property">
                                     <div className="key">
                                         Balance
@@ -78,13 +78,13 @@ function Account(): JSX.Element {
                                             displayType={'text'}
                                             thousandSeparator={true}
                                         ></NumberFormat>
-                                        <AlgoIcon></AlgoIcon>
+                                        <VoiIcon></VoiIcon>
                                     </div>
                                 </div>
                             </Grid>
                         </Grid>
                         <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
+                            <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
                                 <div className="property">
                                     <div className="key">
                                         Minimum balance
@@ -95,7 +95,7 @@ function Account(): JSX.Element {
                                             displayType={'text'}
                                             thousandSeparator={true}
                                         ></NumberFormat>
-                                        <AlgoIcon></AlgoIcon>
+                                        <VoiIcon></VoiIcon>
                                     </div>
                                 </div>
                             </Grid>
@@ -105,7 +105,7 @@ function Account(): JSX.Element {
 
 
 
-                            <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
+                            <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
                                 <div className="property">
                                     <div className="key">
                                         Holding assets
@@ -125,7 +125,7 @@ function Account(): JSX.Element {
                                 </div>
                             </Grid>
                             <Grid item xs={12} sm={3} md={1} lg={1} xl={1}></Grid>
-                            <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
+                            <Grid item xs={12} sm={6} md={5} lg={3} xl={3}>
                                 <div className="property">
                                     <div className="key">
                                         Created applications

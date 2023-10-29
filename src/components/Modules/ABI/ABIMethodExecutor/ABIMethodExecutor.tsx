@@ -33,7 +33,7 @@ import {getFileContent} from "../../../../packages/core-sdk/utils/fileUtils";
 import {ApplicationClient} from "../../../../packages/core-sdk/clients/applicationClient";
 import {CoreTransaction} from "../../../../packages/core-sdk/classes/core/CoreTransaction";
 import {isNumber, shadedClr} from "../../../../utils/common";
-import AlgoIcon from "../../Explorer/AlgoIcon/AlgoIcon";
+import VoiIcon from "../../Explorer/VoiIcon/VoiIcon";
 import AssetPicker from "./AssetPicker/AssetPicker";
 import {A_AccountInformation, A_Asset, A_SearchTransaction} from "../../../../packages/core-sdk/types";
 import {updateAppId} from "../../../../redux/abi/actions/abiStudio";
@@ -563,7 +563,7 @@ function ABIMethodExecutor({show = false, creation = false, method = {
 
                                                                                     setState(prevState => ({...prevState, executorArgs: processedArgs}));
                                                                                 }}
-                                                                                endAdornment={<div style={{marginRight: '10px'}}><AlgoIcon></AlgoIcon></div>}
+                                                                                endAdornment={<div style={{marginRight: '10px'}}><VoiIcon></VoiIcon></div>}
                                                                                 fullWidth/>
 
 
@@ -730,7 +730,7 @@ function ABIMethodExecutor({show = false, creation = false, method = {
                                                                                         ...advanced, fee: ev.target.value + ""
                                                                                         }}));
                                                                                 }}
-                                                                                endAdornment={<div style={{marginRight: '10px'}}><AlgoIcon></AlgoIcon></div>}
+                                                                                endAdornment={<div style={{marginRight: '10px'}}><VoiIcon></VoiIcon></div>}
                                                                                 fullWidth
                                                                             />
                                                                         </Grid>

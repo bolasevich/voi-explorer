@@ -18,7 +18,7 @@ import {
 import {dataGridCellConfig, dataGridStyles} from "../../../../../theme/styles/datagrid";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import {microalgosToAlgos, copyContent} from "../../../../../utils/common";
-import AlgoIcon from "../../AlgoIcon/AlgoIcon";
+import VoiIcon from "../../VoiIcon/VoiIcon";
 import {CoreTransaction} from "../../../../../packages/core-sdk/classes/core/CoreTransaction";
 import {TXN_TYPES} from "../../../../../packages/core-sdk/constants";
 import {ArrowForward} from "@mui/icons-material";
@@ -203,7 +203,7 @@ function TransactionsList({transactions = [], loading = false, reachedLastPage =
 
                 return <div className="cell-content">
                     {type === TXN_TYPES.PAYMENT ? <div>
-                        <AlgoIcon width={10}></AlgoIcon>
+                        <VoiIcon width={10}></VoiIcon>
                         <NumberFormat
                             value={microalgosToAlgos(amount)}
                             displayType={'text'}
@@ -229,7 +229,7 @@ function TransactionsList({transactions = [], loading = false, reachedLastPage =
                 const fee = new CoreTransaction(params.row).getFee();
 
                 return <div className="cell-content">
-                    <AlgoIcon width={10}></AlgoIcon>
+                    <VoiIcon width={10}></VoiIcon>
                     <NumberFormat
                         value={microalgosToAlgos(fee)}
                         displayType={'text'}

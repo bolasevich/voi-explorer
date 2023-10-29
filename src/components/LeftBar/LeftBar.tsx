@@ -84,6 +84,9 @@ function LeftBar(): JSX.Element {
                       <Tab icon={<StorageIcon></StorageIcon>} iconPosition="start" label={<span className="label">Explorer</span>} value="explorer" onClick={() => {
                           navigate('/explorer');
                       }}/>
+                      <Tab icon={<ShowerIcon></ShowerIcon>} iconPosition="start" label={<span className="label">Dispenser</span>} value="dispenser" onClick={() => {
+                          navigate('/dispenser');
+                      }}/>
                       <Tab icon={<DeveloperBoardIcon></DeveloperBoardIcon>} iconPosition="start" label={<span className="label">ABI Studio</span>} value="abi-studio" onClick={() => {
                           navigate('/abi-studio');
                       }}/>
@@ -92,9 +95,6 @@ function LeftBar(): JSX.Element {
                       }}/>
                       <Tab icon={<GavelIcon></GavelIcon>} iconPosition="start" label={<span className="label">ARC Portal</span>} value="arc-portal" onClick={() => {
                           navigate('/arc-portal');
-                      }}/>
-                      <Tab icon={<ShowerIcon></ShowerIcon>} iconPosition="start" label={<span className="label">Dispenser</span>} value="dispenser" onClick={() => {
-                          navigate('/dispenser');
                       }}/>
                       <Tab icon={<InsertChartIcon></InsertChartIcon>} iconPosition="start" label={<span className="label">Node Status</span>} value="node-status" onClick={() => {
                           navigate('/node-status');

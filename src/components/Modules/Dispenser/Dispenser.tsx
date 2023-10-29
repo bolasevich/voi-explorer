@@ -17,7 +17,7 @@ import {getKMDConfig} from "../../../utils/nodeConfig";
 import {KMDConnectionParams} from "../../../packages/core-sdk/types";
 import LaunchIcon from '@mui/icons-material/Launch';
 import {theme} from "../../../theme";
-import AlgoIcon from "../Explorer/AlgoIcon/AlgoIcon";
+import VoiIcon from "../Explorer/VoiIcon/VoiIcon";
 import { useLocation } from 'react-router-dom';
 
 const ShadedInput = styled(InputBase)<InputBaseProps>(({ theme }) => {
@@ -213,7 +213,7 @@ function Dispenser(): JSX.Element {
                                         onChange={(ev) => {
                                             setState(prevState => ({...prevState, amount: ev.target.value + ""}));
                                         }}
-                                        endAdornment={<div style={{marginRight: '10px'}}><AlgoIcon></AlgoIcon></div>}
+                                        endAdornment={<div style={{marginRight: '10px'}}><VoiIcon></VoiIcon></div>}
                                         fullWidth
                                     />
                                 </div>
@@ -253,10 +253,8 @@ function Dispenser(): JSX.Element {
                         <Grid container spacing={0}>
                             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                                 <Alert icon={false} color={"warning"}>
-                                    Dispenser is available only for sandbox environment.
+                                    Dispenser for node runners and developers can be found on the <a href="https://discord.gg/UPBnGr3qm8">VOI Discord</a>
                                     <br/>
-                                    {dispenerLinks.length > 0 ? 'Please try below dispensers by community.' : 'Community dispensers are not available for this network.'}
-
                                 </Alert>
                                 {dispenerLinks.map((link, index) => {
                                     return <Button

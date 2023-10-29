@@ -3,7 +3,7 @@ import React from "react";
 import {Accordion, AccordionDetails, AccordionSummary, Grid, Typography} from "@mui/material";
 import {ExpandMore} from "@mui/icons-material";
 import NumberFormat from "react-number-format";
-import AlgoIcon from "../../../../AlgoIcon/AlgoIcon";
+import VoiIcon from "../../../../VoiIcon/VoiIcon";
 import {CoreTransaction} from "../../../../../../../packages/core-sdk/classes/core/CoreTransaction";
 import {shadedClr,microalgosToAlgos} from "../../../../../../../utils/common";
 
@@ -59,7 +59,7 @@ function TransactionAdditionalDetails(props): JSX.Element {
                                             thousandSeparator={true}
                                             style={{marginRight: 5}}
                                         ></NumberFormat>
-                                        <AlgoIcon></AlgoIcon>
+                                        <VoiIcon></VoiIcon>
                                     </div>
                                 </div>
                             </Grid>
@@ -76,7 +76,7 @@ function TransactionAdditionalDetails(props): JSX.Element {
                                             thousandSeparator={true}
                                             style={{marginRight: 5}}
                                         ></NumberFormat>
-                                        <AlgoIcon></AlgoIcon>
+                                        <VoiIcon></VoiIcon>
                                     </div>
                                 </div>
                             </Grid>
