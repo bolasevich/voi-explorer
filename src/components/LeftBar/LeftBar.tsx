@@ -17,6 +17,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import GavelIcon from '@mui/icons-material/Gavel';
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
 import ShowerIcon from '@mui/icons-material/Shower';
+import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import {CoreNode} from "../../packages/core-sdk/classes/core/CoreNode";
 import {supportSettings} from "../../utils/nodeConfig";
@@ -86,6 +87,9 @@ function LeftBar(): JSX.Element {
                       }}/>
                       <Tab icon={<ShowerIcon></ShowerIcon>} iconPosition="start" label={<span className="label">Dispenser</span>} value="dispenser" onClick={() => {
                           navigate('/dispenser');
+                      }}/>
+                      <Tab icon={<RecordVoiceOverIcon />} iconPosition="start" label={<span className="label">Consensus</span>} value="consensus" onClick={() => {
+                          window.open(`https://consensus.voi.observer/`);
                       }}/>
                       <Tab icon={<DeveloperBoardIcon></DeveloperBoardIcon>} iconPosition="start" label={<span className="label">ABI Studio</span>} value="abi-studio" onClick={() => {
                           navigate('/abi-studio');
