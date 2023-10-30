@@ -29,6 +29,8 @@ function Asset(): JSX.Element {
         document.title = `V.O: Asset ${id}`
     }, [dispatch, id]);
 
+    const b64Name = !assetInstance.getName()
+
     return (<div className={"asset-wrapper"}>
         <div className={"asset-container"}>
 
@@ -58,10 +60,10 @@ function Asset(): JSX.Element {
                             <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
                                 <div className="property">
                                     <div className="key">
-                                        Name
+                                        {!b64Name ? 'Name' : 'Name (B64)'}
                                     </div>
-                                    <div className="value">
-                                        {assetInstance.getName()}
+                                    <div className="value" style={{wordBreak: b64Name ? 'break-word' : 'inherit'}}>
+                                        {assetInstance.getName() ?? assetInstance.getNameB64()}
                                     </div>
                                 </div>
                             </Grid>
@@ -69,10 +71,10 @@ function Asset(): JSX.Element {
                             <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
                                 <div className="property">
                                     <div className="key">
-                                        Unit
+                                        {assetInstance.getUnitName() ? 'Unit' : 'Unit (B64)'}
                                     </div>
                                     <div className="value">
-                                        {assetInstance.getUnitName()}
+                                        {assetInstance.getUnitName() ?? assetInstance.getUnitNameB64() }
                                     </div>
                                 </div>
                             </Grid>
