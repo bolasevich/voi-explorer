@@ -56,7 +56,7 @@ function Application(): JSX.Element {
 
                 {application.loading ? <LoadingTile></LoadingTile> : <div className="application-body">
                     <div className="id">
-                        #{applicationInstance.getId()}
+                        <span className="no-select">#</span>{applicationInstance.getId()}
                     </div>
 
                     <div className="props" style={{background: shadedClr}}>

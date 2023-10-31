@@ -50,7 +50,7 @@ function Asset(): JSX.Element {
 
                 {asset.loading ? <LoadingTile></LoadingTile> : <div className="asset-body">
                     <div className="index">
-                        <div>#{assetInstance.getIndex()}<Copyable value={assetInstance.getIndex()} /></div>
+                        <div><span className="no-select">#</span>{assetInstance.getIndex()}<Copyable value={assetInstance.getIndex()} /></div>
                         <div style={{marginTop: 5}}>
                             {assetInstance.getUrl() ? <>
                                 <Link href={assetInstance.getUrl()} target={"_blank"} style={{fontSize: 13, marginTop: 10}}>{assetInstance.getUrl()}</Link><Copyable value={assetInstance.getUrl()} />
