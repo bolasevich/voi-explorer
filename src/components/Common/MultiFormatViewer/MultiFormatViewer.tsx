@@ -1,4 +1,6 @@
 import React, {useState, useEffect, useCallback} from "react";
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ToggleButton from '@mui/material/ToggleButton';
 import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
@@ -36,18 +38,18 @@ export default function MultiFormatViewer(props: MultiFormatViewerProps): JSX.El
 
     return <div className="HFlex">
         {displayValue}
-        <ToggleButtonGroup style={style} size="small" value={view} exclusive onChange={changeView} className="threequarterscale">
+        <ButtonGroup style={style} variant="outlined" size={"small"} className="threequarterscale">
             <Tooltip title="Text (UTF-8)">
-                <ToggleButton value="utf8" aria-label="text">
+                <Button variant={view === 'utf8' ? 'contained' : 'outlined'} onClick={() => {changeView(null, 'utf8')}}>
                     <TitleOutlinedIcon />
-                </ToggleButton>
+                </Button>
             </Tooltip>
             <Tooltip title="Base 64 encoded">
-                <ToggleButton value="base64" aria-label="base64">
+                <Button variant={view === 'base64' ? 'contained' : 'outlined'} onClick={() => {changeView(null, 'base64')}}>
                     <FormatBoldOutlinedIcon />
-                </ToggleButton>
+                </Button>
             </Tooltip>
-        </ToggleButtonGroup>
+        </ButtonGroup>
         <Copyable value={displayValue} />
     </div>;
 }
