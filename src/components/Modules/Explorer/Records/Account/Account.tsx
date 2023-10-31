@@ -13,6 +13,7 @@ import LoadingTile from "../../../../Common/LoadingTile/LoadingTile";
 import JsonViewer from "../../../../Common/JsonViewer/JsonViewer";
 import CustomError from "../../Common/CustomError/CustomError";
 import Copyable from '../../../../Common/Copyable/Copyable';
+import LinkToApplication from '../../Common/Links/LinkToApplication';
 
 function Account(): JSX.Element {
     const dispatch = useDispatch();
@@ -60,6 +61,7 @@ function Account(): JSX.Element {
                     <div className="address">
                         {account.information.address} <Copyable value={account.information.address} />
                         <div style={{marginTop: 10}}>
+                            { account.escrowOf ? <LinkToApplication id={account.escrowOf}><Chip className="hover-cursor-pointer" color={"success"} variant="outlined" label={`App Escrow`} size="small" style={{marginRight: '4px'}} /></LinkToApplication> : null }
                             <Chip color={"warning"} variant={"outlined"} label={account.information.status} size={"small"}></Chip>
                         </div>
 
@@ -83,6 +85,20 @@ function Account(): JSX.Element {
                                     </div>
                                 </div>
                             </Grid>
+                            { account.escrowOf ? <>
+                                <Grid item xs={12} sm={3} md={1} lg={1} xl={1}></Grid>
+                                <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
+                                    <div className="property">
+                                        <div className="key">
+                                            Application Escrow
+                                        </div>
+                                        <div className="value">
+                                            <LinkToApplication id={account.escrowOf} />
+                                            <Copyable value={account.escrowOf} />
+                                        </div>
+                                    </div>
+                                </Grid>
+                            </> : null }
                         </Grid>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
