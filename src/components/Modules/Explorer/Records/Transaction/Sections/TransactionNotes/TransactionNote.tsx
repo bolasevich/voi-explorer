@@ -1,5 +1,5 @@
 import './TransactionNote.scss';
-import React, {useState} from "react";
+import React, {useState, useMemo} from "react";
 import {Button, ButtonGroup, Grid} from "@mui/material";
 import {CoreTransaction} from "../../../../../../../packages/core-sdk/classes/core/CoreTransaction";
 import {TEXT_ENCODING} from "../../../../../../../packages/core-sdk/constants";
@@ -10,22 +10,24 @@ interface TransactionNoteState{
     textEncoding: string,
 }
 const initialState: TransactionNoteState = {
-    textEncoding: TEXT_ENCODING.BASE64
+    textEncoding: TEXT_ENCODING.TEXT,
 };
 
 function TransactionNote(props): JSX.Element {
-
     const {transaction} = props;
     const txnInstance = new CoreTransaction(transaction);
+
+    const txnJson = useMemo(() => txnInstance.getNoteJSON(), [txnInstance.getNote()]);
 
     const [
         {textEncoding},
         setState
-    ] = useState(initialState);
+    ] = useState(txnJson ? { textEncoding: TEXT_ENCODING.JSON } : initialState);
 
     function setTextEncoding(encoding: string) {
         setState(prevState => ({...prevState, textEncoding: encoding}));
     }
+
 
     return (<div className={"transaction-note-wrapper"}>
         <div className={"transaction-note-container"}>
