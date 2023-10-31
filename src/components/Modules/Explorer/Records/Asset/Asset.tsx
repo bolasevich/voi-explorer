@@ -13,7 +13,7 @@ import {shadedClr} from "../../../../../utils/common";
 import JsonViewer from "../../../../Common/JsonViewer/JsonViewer";
 import CustomError from "../../Common/CustomError/CustomError";
 import AssetARCValidator from "./Actions/AssetARCValidator/AssetARCValidator";
-
+import MultiFormatViewer from "../../../../../components/Common/MultiFormatViewer/MultiFormatViewer";
 
 function Asset(): JSX.Element {
     const dispatch = useDispatch();
@@ -63,7 +63,7 @@ function Asset(): JSX.Element {
                                         {!b64Name ? 'Name' : 'Name (B64)'}
                                     </div>
                                     <div className="value" style={{wordBreak: b64Name ? 'break-word' : 'inherit'}}>
-                                        {assetInstance.getName() ?? assetInstance.getNameB64()}
+                                        <MultiFormatViewer view={b64Name ? 'base64' : 'utf8'} value={assetInstance.getNameB64()} />
                                     </div>
                                 </div>
                             </Grid>
@@ -74,7 +74,7 @@ function Asset(): JSX.Element {
                                         {assetInstance.getUnitName() ? 'Unit' : 'Unit (B64)'}
                                     </div>
                                     <div className="value">
-                                        {assetInstance.getUnitName() ?? assetInstance.getUnitNameB64() }
+                                        <MultiFormatViewer view={assetInstance.getUnitName() ? 'utf8' : 'base64'} value={assetInstance.getUnitNameB64()} />
                                     </div>
                                 </div>
                             </Grid>
