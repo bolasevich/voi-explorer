@@ -9,6 +9,7 @@ export enum TXN_TYPES {
 }
 
 export enum TEXT_ENCODING {
+    JSON = 'json',
     BASE64 = 'base64',
     TEXT = 'text',
     MSG_PACK = 'msgpack',

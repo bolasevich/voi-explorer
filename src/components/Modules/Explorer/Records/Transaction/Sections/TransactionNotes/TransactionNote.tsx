@@ -36,16 +36,20 @@ function TransactionNote(props): JSX.Element {
                         <div className="property">
                             <div className="key">
                                 Note
-                                <ButtonGroup variant="outlined" size={"small"} style={{marginLeft: 20}}>
+                                <ButtonGroup variant="outlined" size={"small"} style={{marginLeft: 20, marginRight: 15}}>
+                                    { txnInstance.getNoteJSON() ? <Button variant={textEncoding === TEXT_ENCODING.JSON ? 'contained' : 'outlined'} onClick={() => {setTextEncoding(TEXT_ENCODING.JSON)}}>JSON</Button> : null }
                                     <Button variant={textEncoding === TEXT_ENCODING.TEXT ? 'contained' : 'outlined'} onClick={() => {setTextEncoding(TEXT_ENCODING.TEXT)}}>Text</Button>
                                     <Button variant={textEncoding === TEXT_ENCODING.BASE64 ? 'contained' : 'outlined'} onClick={() => {setTextEncoding(TEXT_ENCODING.BASE64)}}>Base 64</Button>
                                     <Button variant={textEncoding === TEXT_ENCODING.MSG_PACK ? 'contained' : 'outlined'} onClick={() => {setTextEncoding(TEXT_ENCODING.MSG_PACK)}}>Message pack</Button>
+                                    <Button variant={textEncoding === TEXT_ENCODING.HEX ? 'contained' : 'outlined'} onClick={() => {setTextEncoding(TEXT_ENCODING.HEX)}}>Hex</Button>
                                 </ButtonGroup>
-
+                                <Copyable value={txnInstance.getNote(textEncoding)} />
                             </div>
                             <div className="value small">
-                                <div style={{marginTop: 30}}>
-                                    {txnInstance.getNote(textEncoding)}
+                                <div style={{marginTop: 30, wordBreak: 'break-word',}}>
+                                    { textEncoding === TEXT_ENCODING.JSON ? <span style={{whiteSpace: 'pre'}}>
+                                        {txnInstance.getNote(textEncoding)}
+                                    </span> : txnInstance.getNote(textEncoding) }
                                 </div>
                             </div>
                         </div>
