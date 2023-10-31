@@ -12,7 +12,7 @@ import {CoreAccount} from "../../../../../packages/core-sdk/classes/core/CoreAcc
 import LoadingTile from "../../../../Common/LoadingTile/LoadingTile";
 import JsonViewer from "../../../../Common/JsonViewer/JsonViewer";
 import CustomError from "../../Common/CustomError/CustomError";
-
+import Copyable from '../../../../Common/Copyable/Copyable';
 
 function Account(): JSX.Element {
     const dispatch = useDispatch();
@@ -58,7 +58,7 @@ function Account(): JSX.Element {
 
                 {account.loading ? <LoadingTile></LoadingTile> : <div className="account-body">
                     <div className="address">
-                        {account.information.address}
+                        {account.information.address} <Copyable value={account.information.address} />
                         <div style={{marginTop: 10}}>
                             <Chip color={"warning"} variant={"outlined"} label={account.information.status} size={"small"}></Chip>
                         </div>

@@ -62,15 +62,7 @@ function Accounts(): JSX.Element {
             headerName: 'Address',
             flex: 2,
             renderCell: (params: GridValueGetterParams) => {
-                return <div>
-                    <Tooltip title="Click to copy">
-                        <ContentCopyIcon className="copy-content" onClick={(ev) => {
-                            copyContent(ev, dispatch, params.row.address, 'Address copied');
-                        }
-                        }></ContentCopyIcon>
-                    </Tooltip>
-                    <LinkToAccount address={params.row.address} strip={30}></LinkToAccount>
-                </div>;
+                return <LinkToAccount copy="left" address={params.row.address} strip={30}></LinkToAccount>
             }
         },
         {

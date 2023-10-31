@@ -5,6 +5,7 @@ import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
 import FormatBoldOutlinedIcon from '@mui/icons-material/FormatBoldOutlined';
 import './MultiFormatViewer.scss';
 import Copyable from '../../../components/Common/Copyable/Copyable';
+import { Tooltip } from "@mui/material";
 
 interface MultiFormatViewerProps {
     view?: 'utf8' | 'base64';
@@ -20,7 +21,10 @@ export default function MultiFormatViewer(props: MultiFormatViewerProps): JSX.El
     const [view, setView] = useState(defaultView);
     const [displayValue, setDisplayValue] = useState<string>();
 
-    const changeView = useCallback((_, nextView) => setView(nextView), []);
+    const changeView = useCallback((_, nextView) => {
+        if (nextView) 
+            setView(nextView)
+    }, []);
 
     useEffect(() => {
         if (view === 'utf8') {
@@ -33,13 +37,17 @@ export default function MultiFormatViewer(props: MultiFormatViewerProps): JSX.El
     return <div className="HFlex">
         {displayValue}
         <ToggleButtonGroup style={style} size="small" value={view} exclusive onChange={changeView} className="threequarterscale">
-        <ToggleButton value="utf8" aria-label="text" title="Text (UTF-8)">
-            <TitleOutlinedIcon />
-        </ToggleButton>
-        <ToggleButton value="base64" aria-label="base64" title="Base 64 encoded">
-            <FormatBoldOutlinedIcon />
-        </ToggleButton>
+            <Tooltip title="Text (UTF-8)">
+                <ToggleButton value="utf8" aria-label="text">
+                    <TitleOutlinedIcon />
+                </ToggleButton>
+            </Tooltip>
+            <Tooltip title="Base 64 encoded">
+                <ToggleButton value="base64" aria-label="base64">
+                    <FormatBoldOutlinedIcon />
+                </ToggleButton>
+            </Tooltip>
         </ToggleButtonGroup>
-    <Copyable value={displayValue} />
+        <Copyable value={displayValue} />
     </div>;
 }

@@ -14,6 +14,7 @@ import JsonViewer from "../../../../Common/JsonViewer/JsonViewer";
 import CustomError from "../../Common/CustomError/CustomError";
 import AssetARCValidator from "./Actions/AssetARCValidator/AssetARCValidator";
 import MultiFormatViewer from "../../../../../components/Common/MultiFormatViewer/MultiFormatViewer";
+import Copyable from "../../../../../components/Common/Copyable/Copyable";
 
 function Asset(): JSX.Element {
     const dispatch = useDispatch();
@@ -49,9 +50,11 @@ function Asset(): JSX.Element {
 
                 {asset.loading ? <LoadingTile></LoadingTile> : <div className="asset-body">
                     <div className="index">
-                        #{assetInstance.getIndex()}
+                        <div>#{assetInstance.getIndex()}<Copyable value={assetInstance.getIndex()} /></div>
                         <div style={{marginTop: 5}}>
-                            {assetInstance.getUrl() ? <Link href={assetInstance.getUrl()} target={"_blank"} style={{fontSize: 13, marginTop: 10}}>{assetInstance.getUrl()}</Link> : ''}
+                            {assetInstance.getUrl() ? <>
+                                <Link href={assetInstance.getUrl()} target={"_blank"} style={{fontSize: 13, marginTop: 10}}>{assetInstance.getUrl()}</Link><Copyable value={assetInstance.getUrl()} />
+                            </>: ''}
                         </div>
                     </div>
 
@@ -60,7 +63,7 @@ function Asset(): JSX.Element {
                             <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
                                 <div className="property">
                                     <div className="key">
-                                        {!b64Name ? 'Name' : 'Name (B64)'}
+                                        Name
                                     </div>
                                     <div className="value" style={{wordBreak: b64Name ? 'break-word' : 'inherit'}}>
                                         <MultiFormatViewer view={b64Name ? 'base64' : 'utf8'} value={assetInstance.getNameB64()} />
@@ -71,7 +74,7 @@ function Asset(): JSX.Element {
                             <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
                                 <div className="property">
                                     <div className="key">
-                                        {assetInstance.getUnitName() ? 'Unit' : 'Unit (B64)'}
+                                        Unit
                                     </div>
                                     <div className="value">
                                         <MultiFormatViewer view={assetInstance.getUnitName() ? 'utf8' : 'base64'} value={assetInstance.getUnitNameB64()} />
@@ -89,7 +92,8 @@ function Asset(): JSX.Element {
                                             value={assetInstance.getTotalSupply()}
                                             displayType={'text'}
                                             thousandSeparator={true}
-                                        ></NumberFormat>
+                                        />
+                                        <Copyable value={assetInstance.getTotalSupply()} />
                                     </div>
                                 </div>
                             </Grid>
