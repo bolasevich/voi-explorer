@@ -79,6 +79,7 @@ function Account(): JSX.Element {
                                             thousandSeparator={true}
                                         ></NumberFormat>
                                         <VoiIcon></VoiIcon>
+                                        <Copyable value={microalgosToAlgos(new CoreAccount(account.information).getBalance())} />
                                     </div>
                                 </div>
                             </Grid>
@@ -96,6 +97,7 @@ function Account(): JSX.Element {
                                             thousandSeparator={true}
                                         ></NumberFormat>
                                         <VoiIcon></VoiIcon>
+                                        <Copyable value={microalgosToAlgos(new CoreAccount(account.information).getMinBalance())} />
                                     </div>
                                 </div>
                             </Grid>

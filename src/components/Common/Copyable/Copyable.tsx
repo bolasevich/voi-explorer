@@ -17,7 +17,9 @@ export default function Copyable({ value, style }: { value: string | number, sty
   const copy = useCallback(() => {
     setIcon(checkmarkState);
     setTitle(checkmarkTitle);
+
     navigator.clipboard.writeText(String(value));
+
     setTimeout(() => {
       setIcon(copyState);
       setTitle(copyTitle);

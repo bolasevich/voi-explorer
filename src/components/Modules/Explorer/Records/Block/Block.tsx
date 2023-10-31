@@ -9,8 +9,9 @@ import LoadingTile from "../../../../Common/LoadingTile/LoadingTile";
 import {CoreBlock} from "../../../../../packages/core-sdk/classes/core/CoreBlock";
 import CustomError from "../../Common/CustomError/CustomError";
 import LinkToBlock from "../../Common/Links/LinkToBlock";
+import LinkToAccount from "../../Common/Links/LinkToAccount";
 import {Alert} from "@mui/lab";
-
+import Copyable from '../../../../Common/Copyable/Copyable';
 
 function Block(): JSX.Element {
     const dispatch = useDispatch();
@@ -45,7 +46,7 @@ function Block(): JSX.Element {
 
                 {block.loading ? <LoadingTile></LoadingTile> : <div className="block-body">
                     <div className="address">
-                        #{blockInstance.getRound()}
+                        <span className="no-select">#</span>{blockInstance.getRound()} <Copyable value={blockInstance.getRound()} />
                     </div>
 
 
@@ -98,6 +99,7 @@ function Block(): JSX.Element {
                                     </div>
                                     <div className="value">
                                         {blockInstance.getTimestampDisplayValue()}
+                                        <Copyable value={blockInstance.getTimestampDisplayValue()} />
                                     </div>
                                 </div>
 
@@ -122,7 +124,7 @@ function Block(): JSX.Element {
                                         Hash
                                     </div>
                                     <div className="value">
-                                        {block.hash}
+                                        {block.hash} <Copyable value={block.hash} />
                                     </div>
                                 </div>
                             </Grid>
@@ -133,7 +135,7 @@ function Block(): JSX.Element {
                                         Proposer
                                     </div>
                                     <div className="value">
-                                        {block.proposer}
+                                        <LinkToAccount address={block.proposer} />
                                     </div>
                                 </div>
                             </Grid>

@@ -28,7 +28,7 @@ import {RootState} from "../../../../../redux/store";
 import CustomError from '../../Common/CustomError/CustomError';
 import AssetFreezeTransaction from "./Types/AssetFreezeTransaction/AssetFreezeTransaction";
 import StateProofTransaction from "./Types/StateProofTransaction/StateProofTransaction";
-
+import Copyable from '../../../../Common/Copyable/Copyable';
 
 function Transaction(): JSX.Element {
     const dispatch = useDispatch();
@@ -62,7 +62,7 @@ function Transaction(): JSX.Element {
 
                 {transaction.loading ? <LoadingTile></LoadingTile> : <div className="transaction-body">
                     <div className="index">
-                        {txnInstance.getId()}
+                        {txnInstance.getId()} <Copyable value={txnInstance.getId()} />
                         <div style={{marginTop: 15}}>
                             <Chip color={"warning"} variant={"outlined"} label={txnInstance.getTypeDisplayValue()} size={"small"}></Chip>
                             {txnInstance.isMultiSig() ? <Chip style={{marginLeft: 10}} color={"warning"} label="MultiSig" size={"small"} variant={"outlined"}></Chip> : ''}
@@ -93,6 +93,7 @@ function Transaction(): JSX.Element {
                                     </div>
                                     <div className="value">
                                         <LinkToBlock id={txnInstance.getBlock()}></LinkToBlock>
+                                        <Copyable value={txnInstance.getBlock()} />
                                     </div>
                                 </div>
                             </Grid>
@@ -120,6 +121,7 @@ function Transaction(): JSX.Element {
                                     </div>
                                     <div className="value">
                                         {txnInstance.getTimestampDisplayValue()}
+                                        <Copyable value={txnInstance.getTimestampDisplayValue()} />
                                     </div>
                                 </div>
                             </Grid>
@@ -131,6 +133,7 @@ function Transaction(): JSX.Element {
                                     </div>
                                     <div className="value small">
                                         <LinkToGroup id={txnInstance.getGroup()} blockId={txnInstance.getBlock()}></LinkToGroup>
+                                        <Copyable value={txnInstance.getGroup()} />
                                     </div>
                                 </div>
                             </Grid> : ''}

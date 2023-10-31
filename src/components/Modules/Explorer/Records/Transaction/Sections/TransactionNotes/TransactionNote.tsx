@@ -4,6 +4,7 @@ import {Button, ButtonGroup, Grid} from "@mui/material";
 import {CoreTransaction} from "../../../../../../../packages/core-sdk/classes/core/CoreTransaction";
 import {TEXT_ENCODING} from "../../../../../../../packages/core-sdk/constants";
 import {shadedClr} from "../../../../../../../utils/common";
+import Copyable from '../../../../../../Common/Copyable/Copyable';
 
 interface TransactionNoteState{
     textEncoding: string,
@@ -51,8 +52,6 @@ function TransactionNote(props): JSX.Element {
                     </Grid>
                 </Grid>
             </div> : ''}
-
-
 
         </div>
     </div>);
