@@ -7,6 +7,7 @@ import {
 
 export interface A_AccountInformation {
     address: string
+    "auth-addr": string
     amount: number
     "min-balance": number
     "amount-without-pending-rewards": number

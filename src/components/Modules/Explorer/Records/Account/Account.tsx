@@ -14,6 +14,7 @@ import JsonViewer from "../../../../Common/JsonViewer/JsonViewer";
 import CustomError from "../../Common/CustomError/CustomError";
 import Copyable from '../../../../Common/Copyable/Copyable';
 import LinkToApplication from '../../Common/Links/LinkToApplication';
+import LinkToAccount from '../../Common/Links/LinkToAccount';
 
 function Account(): JSX.Element {
     const dispatch = useDispatch();
@@ -95,6 +96,19 @@ function Account(): JSX.Element {
                                         <div className="value">
                                             <LinkToApplication id={account.escrowOf} />
                                             <Copyable value={account.escrowOf} />
+                                        </div>
+                                    </div>
+                                </Grid>
+                            </> : null }
+                            { account.information['auth-addr'] ? <>
+                                <Grid item xs={12} sm={3} md={1} lg={1} xl={1}></Grid>
+                                <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
+                                    <div className="property">
+                                        <div className="key">
+                                            Rekeyed to
+                                        </div>
+                                        <div className="value">
+                                            <LinkToAccount strip={9} address={account.information['auth-addr']} />
                                         </div>
                                     </div>
                                 </Grid>
