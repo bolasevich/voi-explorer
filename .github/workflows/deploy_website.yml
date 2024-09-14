@@ -2,7 +2,7 @@ name: Publish site to S3
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 env:
   BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
