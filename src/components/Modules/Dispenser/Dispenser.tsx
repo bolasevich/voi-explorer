@@ -64,7 +64,7 @@ function Dispenser(): JSX.Element {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        document.title = 'V.O: Dispenser';
+        document.title = 'Voi Explorer: Dispenser';
     }, [location]);
 
     const [

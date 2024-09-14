@@ -23,7 +23,7 @@ function ABIStudio(): JSX.Element {
     }, []);
 
     useEffect(() => {
-        document.title = 'Explorer: ABI Studio';
+        document.title = 'Voi Explorer: ABI Studio';
     }, [location]);
 
     return (<div className={"abi-studio-wrapper"}>

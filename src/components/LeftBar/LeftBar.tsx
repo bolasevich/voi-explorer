@@ -64,7 +64,7 @@ function LeftBar(): JSX.Element {
                   navigate('/');
               }}>
                   <div className="text">
-                      Explorer
+                      Voi Explorer
                   </div>
               </div>
 

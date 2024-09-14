@@ -41,7 +41,7 @@ function Account(): JSX.Element {
 
     useEffect(() => {
         dispatch(loadAccount(address));
-        document.title = `Explorer: Account ${address}`
+        document.title = `Voi Explorer: Account ${address}`
     }, [dispatch, address]);
 
     return (<div className={"account-wrapper"}>

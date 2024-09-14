@@ -11,7 +11,7 @@ function ArcPortal(): JSX.Element {
     dispatch(loadArcs());
 
     useEffect(() => {
-        document.title = 'Explorer: ARC Portal';
+        document.title = 'Voi Explorer: ARC Portal';
     }, [location]);
 
     return (

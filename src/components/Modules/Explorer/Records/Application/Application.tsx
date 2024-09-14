@@ -38,7 +38,7 @@ function Application(): JSX.Element {
 
     useEffect(() => {
         dispatch(loadApplication(Number(id)));
-        document.title = `Explorer: Application ${id}`
+        document.title = `Voi Explorer: Application ${id}`
     }, [dispatch, id]);
 
     return (<div className={"application-wrapper"}>

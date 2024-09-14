@@ -44,7 +44,7 @@ function Transaction(): JSX.Element {
 
     useEffect(() => {
         dispatch(loadTransaction(id));
-        document.title = `Explorer: Txn ${id}`
+        document.title = `Voi Explorer: Txn ${id}`
     }, [dispatch, id]);
 
     return (<div className={"transaction-wrapper"}>

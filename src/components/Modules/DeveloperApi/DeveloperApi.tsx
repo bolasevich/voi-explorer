@@ -21,7 +21,7 @@ function DeveloperApi(): JSX.Element {
     }, [dispatch]);
 
     useEffect(() => {
-        document.title = 'Explorer: Developer API';
+        document.title = 'Voi Explorer: Developer API';
     }, [location]);
 
     return (<div className={"developer-api-wrapper"}>

@@ -29,7 +29,7 @@ function Group(): JSX.Element {
 
     useEffect(() => {
         dispatch(loadGroup({id, blockId: Number(blockId)}));
-        document.title = `Explorer: Group Txn ${id}`
+        document.title = `Voi Explorer: Group Txn ${id}`
     }, [dispatch, id, blockId]);
 
     return (<div className={"group-wrapper"}>
