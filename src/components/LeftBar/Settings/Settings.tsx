@@ -226,7 +226,8 @@ function Settings(): JSX.Element {
                                         onChange={(ev) => {
                                             setState(prevState => ({...prevState, algodUrl: ev.target.value}));
                                         }}
-                                        fullWidth/>
+                                        fullWidth
+                                        readOnly={true} />
                                 </Grid>
                                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                                     <FormLabel sx={formLabelStyle}>Algod port</FormLabel>
@@ -236,22 +237,9 @@ function Settings(): JSX.Element {
                                         onChange={(ev) => {
                                             setState(prevState => ({...prevState, algodPort: ev.target.value}));
                                         }}
-                                        fullWidth/>
+                                        fullWidth
+                                        readOnly={true} />
                                 </Grid>
-                                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    <FormLabel sx={formLabelStyle}>Algod token</FormLabel>
-                                    <ShadedInput
-                                        placeholder="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                                        value={algodToken}
-                                        onChange={(ev) => {
-                                            setState(prevState => ({...prevState, algodToken: ev.target.value}));
-                                        }}
-                                        fullWidth/>
-                                </Grid>
-
-
-
-
 
                                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                                     <FormLabel sx={formLabelStyle}>Indexer url</FormLabel>
@@ -261,7 +249,8 @@ function Settings(): JSX.Element {
                                         onChange={(ev) => {
                                             setState(prevState => ({...prevState, indexerUrl: ev.target.value}));
                                         }}
-                                        fullWidth/>
+                                        fullWidth
+                                        readOnly={true} />
                                 </Grid>
                                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                                     <FormLabel sx={formLabelStyle}>Indexer port</FormLabel>
@@ -271,17 +260,8 @@ function Settings(): JSX.Element {
                                         onChange={(ev) => {
                                             setState(prevState => ({...prevState, indexerPort: ev.target.value}));
                                         }}
-                                        fullWidth/>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    <FormLabel sx={formLabelStyle}>Indexer token</FormLabel>
-                                    <ShadedInput
-                                        placeholder=""
-                                        value={indexerToken}
-                                        onChange={(ev) => {
-                                            setState(prevState => ({...prevState, indexerToken: ev.target.value}));
-                                        }}
-                                        fullWidth/>
+                                        fullWidth
+                                        readOnly={true} />
                                 </Grid>
                                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                                     <div style={{textAlign: "center", marginTop: 10}}>

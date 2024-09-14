@@ -49,34 +49,7 @@ export function getKMDConfig(): KMDConnectionParams {
 }
 
 export function getNodes(): NodeConnectionParams[] {
-    return [{
-        id: 'sandbox',
-        label: 'Sandbox',
-        algod: {
-            url: 'http://localhost',
-            port: '4001',
-            token: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-        },
-        indexer: {
-            url: 'http://localhost',
-            port: '8980',
-            token: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-        }
-    },
-        {
-            id: 'voimain',
-            label: 'Voi mainnet (Nodly)',
-            algod: {
-                url: 'https://mainnet-api.voi.nodely.dev',
-                port: '443',
-                token: '',
-            },
-            indexer: {
-                url: 'https://mainnet-idx.voi.nodely.dev',
-                port: '443',
-                token: '',
-            }
-        },
+    return [
         {
             id: 'voitest',
             label: 'Voi testnet (Nodly)',
@@ -91,8 +64,21 @@ export function getNodes(): NodeConnectionParams[] {
                 token: '',
             }
         },
-
-        ];
+        {
+            id: 'voimain',
+            label: 'Voi mainnet (Nodly)',
+            algod: {
+                url: 'https://mainnet-api.voi.nodely.dev',
+                port: '443',
+                token: '',
+            },
+            indexer: {
+                url: 'https://mainnet-idx.voi.nodely.dev',
+                port: '443',
+                token: '',
+            }
+        }
+    ];
 }
 
 
