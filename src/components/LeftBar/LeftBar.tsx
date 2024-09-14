@@ -64,7 +64,7 @@ function LeftBar(): JSX.Element {
                   navigate('/');
               }}>
                   <div className="text">
-                      V.O
+                      Explorer
                   </div>
               </div>
 
@@ -85,41 +85,14 @@ function LeftBar(): JSX.Element {
                       <Tab icon={<StorageIcon></StorageIcon>} iconPosition="start" label={<span className="label">Explorer</span>} value="explorer" onClick={() => {
                           navigate('/explorer');
                       }}/>
-                      <Tab icon={<ShowerIcon></ShowerIcon>} iconPosition="start" label={<span className="label">Dispenser</span>} value="dispenser" onClick={() => {
-                          navigate('/dispenser');
-                      }}/>
-                      <Tab icon={<RecordVoiceOverIcon />} iconPosition="start" label={<span className="label">Consensus</span>} value="consensus" onClick={() => {
-                          window.open(`https://consensus.voi.observer/`);
-                      }}/>
-                      <Tab icon={<MonitorHeartIcon />} iconPosition="start" label={<span className="label">Node Metrics</span>} value="node metrics" onClick={() => {
-                          window.open(`https://voi-node-info.boeieruurd.com/`);
-                      }}/>
-                      <Tab icon={<DeveloperBoardIcon></DeveloperBoardIcon>} iconPosition="start" label={<span className="label">ABI Studio</span>} value="abi-studio" onClick={() => {
-                          navigate('/abi-studio');
-                      }}/>
-                      <Tab icon={<CodeIcon></CodeIcon>} iconPosition="start" label={<span className="label">Developer API</span>}value="developer-api" onClick={() => {
-                          navigate('/developer-api');
-                      }}/>
-                      <Tab icon={<GavelIcon></GavelIcon>} iconPosition="start" label={<span className="label">ARC Portal</span>} value="arc-portal" onClick={() => {
-                          navigate('/arc-portal');
-                      }}/>
+
                       <Tab icon={<InsertChartIcon></InsertChartIcon>} iconPosition="start" label={<span className="label">Node Status</span>} value="node-status" onClick={() => {
                           navigate('/node-status');
                       }}/>
-                      <Tab icon={<CreditCardIcon></CreditCardIcon>} iconPosition="start" label={<span className="label">Dev Wallets</span>} value="dev-wallets" onClick={() => {
-                          navigate('/dev-wallets');
-                      }}/>
-
                   </Tabs>
-
-
-
-
               </div>
 
               <div className="footer">
-
-
 
                   <div className="bottom-menu-item-wrapper" onClick={(ev) => {
                       if (supportSettings) {
@@ -146,88 +119,9 @@ function LeftBar(): JSX.Element {
                       </div>
                   </div>
 
-                  <div className="bottom-menu-item-wrapper">
-                      <div className="bottom-menu-item-container" style={{borderTopColor: shadedClr2}}>
-                          {wallet.account.address ? <div>
-
-
-                              <div className="small-text" onClick={showWalletMenu}>
-                                  <AccountBalanceWalletIcon fontSize="small" sx={{marginRight: '5px', verticalAlign: 'middle'}} color={"primary"}></AccountBalanceWalletIcon>
-                                  {wallet.account.address}
-                              </div>
-                              <Menu
-                                  anchorEl={menuAnchorEl}
-                                  open={open}
-                                  disableAutoFocusItem={true}
-                                  anchorOrigin={{
-                                      vertical: 'top',
-                                      horizontal: 'left',
-                                  }}
-                                  transformOrigin={{
-                                      vertical: 'top',
-                                      horizontal: 'left',
-                                  }}
-                                  MenuListProps={{
-
-                                  }}
-                                  onClose={closeWalletMenu}>
-                                  <MenuItem
-                                      selected={false}
-                                      onClick={(e) => {
-                                          navigate('/explorer/account/' + wallet.account.address);
-                                          closeWalletMenu();
-                                          e.preventDefault();
-                                          e.stopPropagation();
-                                      }
-                                      }>
-                                      <ListItemIcon>
-                                          <VisibilityIcon fontSize="small" color={"warning"}/>
-                                      </ListItemIcon>
-                                      <ListItemText sx={{fontSize: '13px'}} disableTypography>View in explorer</ListItemText>
-                                  </MenuItem>
-                                  <MenuItem
-                                      selected={false}
-                                      onClick={(e) => {
-                                          dispatch(showConnectWallet());
-                                          closeWalletMenu();
-                                          e.preventDefault();
-                                          e.stopPropagation();
-                                      }
-                                      }>
-                                      <ListItemIcon>
-                                          <SwapCallsIcon fontSize="small" color={"warning"}/>
-                                      </ListItemIcon>
-                                      <ListItemText sx={{fontSize: '13px'}} disableTypography>Switch wallet</ListItemText>
-                                  </MenuItem>
-                                  <MenuItem
-                                      selected={false}
-                                      onClick={(e) => {
-                                          dispatch(logOut());
-                                          closeWalletMenu();
-                                          e.preventDefault();
-                                          e.stopPropagation();
-                                      }}>
-                                      <ListItemIcon>
-                                          <LogoutIcon fontSize="small" color={"warning"}/>
-                                      </ListItemIcon>
-                                      <ListItemText sx={{fontSize: '13px'}} disableTypography>Disconnect</ListItemText>
-                                  </MenuItem>
-                              </Menu>
-
-                          </div> : <Button variant={"outlined"}
-                                           size={"small"}
-                                           className="black-button"
-                                           onClick={() => {
-                                               dispatch(showConnectWallet());
-                                           }}
-                          ><span className="label">Connect wallet</span><span className="small-label">🔌</span></Button>}
-
-                          <ConnectWallet></ConnectWallet>
-                      </div>
-                  </div>
 
                   <div className="bottom-menu-item-wrapper">
-                      <div className="bottom-menu-item-container"  onClick={() => window.open('https://github.com/d13co/voi-observer')} style={{borderTopColor: shadedClr2}}>
+                      <div className="bottom-menu-item-container"  onClick={() => window.open('https://github.com/VoiNetwork/voi-explorer')} style={{borderTopColor: shadedClr2}}>
                           <GitHubIcon/>
                       </div>
                   </div>

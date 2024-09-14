@@ -64,7 +64,21 @@ export function getNodes(): NodeConnectionParams[] {
         }
     },
         {
-            id: 'algonode_testnet',
+            id: 'voimain',
+            label: 'Voi mainnet (Nodly)',
+            algod: {
+                url: 'https://mainnet-api.voi.nodely.dev',
+                port: '443',
+                token: '',
+            },
+            indexer: {
+                url: 'https://mainnet-idx.voi.nodely.dev',
+                port: '443',
+                token: '',
+            }
+        },
+        {
+            id: 'voitest',
             label: 'Voi testnet (Nodly)',
             algod: {
                 url: 'https://testnet-api.voi.nodly.io',
@@ -77,6 +91,7 @@ export function getNodes(): NodeConnectionParams[] {
                 token: '',
             }
         },
+
         ];
 }
 

@@ -1,6 +1,12 @@
-# Forked from Dappflow
+# Forked from Dappflow and Voi Observer
 
-[Source](https://github.com/intelli-scripts/dappflow)
+[Dappflow Source](https://github.com/intelli-scripts/dappflow)
+[Voi Observer Source](https://github.com/d13co/voi-observer)
+
+## Why this fork?
+
+This fork is intended to be a minimal blockchain explorer that can facilitate exchange listings.
+Improvements are welcome, and likewise it is a goal of this project to link to better projects that the communicate will find useful.
 
 # Getting Started
 

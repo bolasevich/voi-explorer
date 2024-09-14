@@ -56,12 +56,6 @@ function NetworkDetails(): JSX.Element {
                                         </div>
                                     </div>
                                     <div className="tile-detail">
-                                        <div className="key">Faucet</div>
-                                        <div className="value">
-                                            <Link href="/dispenser">Open faucet page</Link>
-                                        </div>
-                                    </div>
-                                    <div className="tile-detail">
                                         <div className="key">Build version</div>
                                         <div className="value">
                                             <div className="value">{coreNodeInstance.getBuildVersion()}</div>
