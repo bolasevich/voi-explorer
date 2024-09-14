@@ -14,8 +14,7 @@ export interface Account {
     optedAssets: A_Asset[],
     transactionsDetails: A_AccountTransactionsResponse & {completed: boolean, loading: boolean}
     createdApplications: A_Application[],
-    optedApplications: A_AppsLocalState[],
-    escrowOf?: number,
+    optedApplications: A_AppsLocalState[]
 }
 
 const information: A_AccountInformation = {
@@ -69,7 +68,6 @@ export const loadAccount = createAsyncThunk(
             dispatch(loadOptedApplications(accountInfo));
             dispatch(loadAccountTransactions(accountInfo));
             dispatch(loadOptedAssets(accountInfo));
-            dispatch(loadEscrowOf(accountInfo));
             dispatch(setLoading(false));
             return accountInfo;
         }
@@ -80,26 +78,6 @@ export const loadAccount = createAsyncThunk(
         }
     }
 );
-
-export const loadEscrowOf = createAsyncThunk(
-    'account/loadEscrowOf',
-    async (account: A_AccountInformation, thunkAPI) => {
-        const {dispatch} = thunkAPI;
-        try {
-            const { address } = account;
-            const prefix = address.slice(0, 3);
-            const resp = await fetch(`https://d13co.github.io/app-addrs/data/voitestnet/data/${prefix}.json`);
-            if (!resp.ok) {
-                return;
-            }
-            const data = await resp.json();
-            return data[address];
-        } catch (e: any) {
-            dispatch(handleException(e));
-        }
-    }
-);
-
 
 export const loadCreatedAssets = createAsyncThunk(
     'account/loadCreatedAssets',
@@ -241,11 +219,6 @@ export const accountSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        builder.addCase(loadEscrowOf.fulfilled, (state, action: PayloadAction<any>) => {
-            if (action.payload) {
-                state.escrowOf = action.payload;
-            }
-        });
         builder.addCase(loadAccount.fulfilled, (state, action: PayloadAction<any>) => {
             if (action.payload) {
                 state.information = action.payload;

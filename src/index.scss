@@ -47,9 +47,3 @@ body {
 .no-select {
   user-select: none;
 }
-
-.hover-cursor-pointer {
-  &:hover {
-    cursor: pointer;
-  }
-}
