@@ -66,7 +66,7 @@ export function getNodes(): NodeConnectionParams[] {
         },
         {
             id: 'voimain',
-            label: 'Voi mainnet (Nodly)',
+            label: 'Voi mainnet (Nodely)',
             algod: {
                 url: 'https://mainnet-api.voi.nodely.dev',
                 port: '443',
