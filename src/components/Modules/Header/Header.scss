@@ -5,17 +5,17 @@
   color: white;
   display: flex;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 20px; /* Adjust the gap between h1 and nav */
 }
 
 .app-header h1 {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 0.8em;
+  font-weight: lighter;
 }
 
 .app-header nav {
-  margin-left: auto;
+  margin-left: 0; /* Remove the auto margin */
 }
 
 .app-header nav ul {
