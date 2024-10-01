@@ -1,25 +1,27 @@
 /* src/components/Header.scss */
 .app-header {
   background-color: #702AE2;
-  padding: 20px;
+  padding: 20px 40px;
   color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .app-header h1 {
   margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .app-header nav {
-  justify-content: space-between;
+  margin-left: auto;
 }
 
 .app-header nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
@@ -27,4 +29,10 @@
 .app-header nav ul li a {
   color: white;
   text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.app-header nav ul li a:hover {
+  color: #FFD700;
 }
