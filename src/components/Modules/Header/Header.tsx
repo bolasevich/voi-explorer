@@ -5,7 +5,6 @@ import './Header.scss';
 const Header: React.FC = () => {
     return (
         <header className="app-header">
-            <h1>Get Voi</h1>
             <nav>
                 <ul>
                     <li><a href="https://www.mexc.com/exchange/VOI_USDT">MEXC</a></li>
