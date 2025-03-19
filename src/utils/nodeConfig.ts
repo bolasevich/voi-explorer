@@ -52,14 +52,14 @@ export function getNodes(): NodeConnectionParams[] {
     return [
         {
             id: 'voitest',
-            label: 'Voi testnet (Nodly)',
+            label: 'Voi testnet (Nodely)',
             algod: {
-                url: 'https://testnet-api.voi.nodly.io',
+                url: 'https://testnet-api.voi.nodely.dev',
                 port: '443',
                 token: '',
             },
             indexer: {
-                url: 'https://testnet-idx.voi.nodly.io',
+                url: 'https://testnet-idx.voi.nodely.dev',
                 port: '443',
                 token: '',
             }
