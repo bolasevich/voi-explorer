@@ -9,7 +9,7 @@ const Header: React.FC = () => {
             <nav>
                 <ul>
                     <li><a href="https://www.mexc.com/exchange/VOI_USDT">MEXC</a></li>
-                    <li><a href="https://voirewards.com/">DEX Guide</a></li>
+                    <li><a href="https://voirewards.com/">Voi Rewards</a></li>
                 </ul>
             </nav>
         </header>
